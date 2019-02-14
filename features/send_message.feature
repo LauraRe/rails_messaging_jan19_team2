@@ -1,4 +1,4 @@
-Feature: User can create a message
+Feature: User can send a message
 
 As a user
 In order to send emails to my friends
@@ -15,21 +15,12 @@ Background:
     And I fill in "Password" with "pereriksson"
     And I click on "Log in"
     Then I should see "Signed in successfully."
-Scenario: User can create a message
+
+Scenario: User can send a message
     When I click on "Inbox"
     And I click on "Compose"
-    Then I should select "Laura" from "Select Box"
+    Then I should select "Laura" from "Recipients"
     And I fill in "Subject" with "Tjena"
-    And I fill in "Message" with "God dag Laura"
+    And I fill in "conversation_body" with "God dag Laura"
     And I click on "Send Message"
     Then I should see "Your message was successfully sent!"
-
-
-
-
-# Scenario: User can't login [Sad Path]
-#     When I click on "Login"
-#     And I fill in "Email" with " "
-#     And I fill in "Password" with " "
-#     And I click on "Log in"
-#     Then I should see "Invalid Email or password."
