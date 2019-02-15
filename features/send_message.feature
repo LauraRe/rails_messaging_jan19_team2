@@ -13,7 +13,7 @@ Background:
     And I am logged in as "Per Hegg"
         
 Scenario: User can send a message
-    Given I am on the "inbox page"
+    Given I am on the "inbox" page
     When I click on "Inbox"
     And I click on "Compose"
     Then I should select "Laura" from "Recipients"

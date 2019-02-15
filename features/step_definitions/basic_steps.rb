@@ -16,11 +16,18 @@ When("I fill in {string} with {string}") do |user_key, user_value|
     fill_in user_key, with: user_value
 end
 
-And (/^I am logged in as "([^"]*)"$/) do |name|
+Given("I am logged in as {string}") do |name|
     user = User.find_by(name: name)
-    login_as(user, scope: :user)
+    login_as user, scope: :user
 end
 
-Given("I am on the {string}") do |page|
-    visit page
+Given("I am on the {string} page") do |page_path|
+    case page_path 
+    when 'sign up'
+        visit new_user_registration_path
+    when 'inbox'
+        visit mailbox_inbox_path
+    else
+        return false
+    end
 end
