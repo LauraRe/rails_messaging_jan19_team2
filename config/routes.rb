@@ -16,5 +16,4 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
-
 end

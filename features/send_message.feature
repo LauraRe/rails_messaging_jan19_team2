@@ -1,8 +1,7 @@
 Feature: User can send a message
-
-As a user
-In order to send emails to my friends
-I should be able to compose an email
+    As a user
+    In order to send emails to my friends
+    I should be able to compose an email
 
 Background: 
     Given I visit the "landing" page
@@ -11,12 +10,10 @@ Background:
         | Per Hegg | per_hegg@hotmail.com   | pereriksson   | pereriksson           |
         | Laura    | laura@gmail.com        | laurareale    | laurareale            |
     When I click on "Login"    
-    And I fill in "Email" with "per_hegg@hotmail.com"
-    And I fill in "Password" with "pereriksson"
-    And I click on "Log in"
-    Then I should see "Signed in successfully."
-
+    And I am logged in as "Per Hegg"
+        
 Scenario: User can send a message
+    Given I am on the "inbox page"
     When I click on "Inbox"
     And I click on "Compose"
     Then I should select "Laura" from "Recipients"

@@ -15,3 +15,12 @@ end
 When("I fill in {string} with {string}") do |user_key, user_value|
     fill_in user_key, with: user_value
 end
+
+And (/^I am logged in as "([^"]*)"$/) do |name|
+    user = User.find_by(name: name)
+    login_as(user, scope: :user)
+end
+
+Given("I am on the {string}") do |page|
+    visit page
+end
