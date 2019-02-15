@@ -28,7 +28,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end 
 
 group :production do
