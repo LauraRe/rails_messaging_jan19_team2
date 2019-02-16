@@ -4,7 +4,7 @@ Feature: User can login
     I should be able to login
 
 Background:
-    Given I visit the "landing" page
+    Given I visit the landing page
     And The following users exist
         | name     | email                  | password      | password_confirmation |
         | Per Hegg | per_hegg@hotmail.com   | pereriksson   | pereriksson           |
